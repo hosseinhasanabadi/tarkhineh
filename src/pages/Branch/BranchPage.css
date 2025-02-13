@@ -1,0 +1,52 @@
+/* استایل کلی کارت‌ها */
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* استایل تصویر */
+  .card img {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #007bff;
+  }
+  
+  /* استایل متن داخل کارت */
+  .card-body {
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+    color: #555;
+    min-height: 50px;
+  }
+  
+  /* استایل دکمه */
+  .card .btn {
+    width: 100%;
+    background-color: #007bff;
+    border: none;
+    font-size: 1rem;
+    padding: 10px;
+    transition:  0.3s;
+  }
+  
+  .card .btn:hover {
+    background-color: #0056b3;
+  }
+  

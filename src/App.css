@@ -1,0 +1,15 @@
+:root{
+  --primay-color:#32a859;
+  --secondary-color:#00892e;
+  --primay-bg-color:rgb(50,168,89,0.8);
+  --secondary-bg-color :rgb(50,168,89,0.9);
+  
+  }
+.img-hover,
+.img-hover:hover{
+    transition: all 0.5s ease;
+}
+
+.img-hover:hover{
+    transform: scale(1.03);
+}

@@ -1,0 +1,14 @@
+#green-btn{
+    background-color: rgba(65, 127, 86, 1);
+    border-color: rgba(65, 127, 86, 1);
+    margin-top: 15px;
+    width: 184px;
+    height:40px ;
+    padding: 8px 16px ;
+   
+}a{
+    size: 16px;
+}
+.btn-title{
+font-size: 15px;
+}

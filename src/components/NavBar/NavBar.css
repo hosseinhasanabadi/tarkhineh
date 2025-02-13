@@ -1,0 +1,278 @@
+/* برای منو همبرگر */
+.StyledBurger {
+  width: 2rem;
+  height: 2rem;
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  z-index: 20;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  cursor: pointer; /* افزودن نشانگر دست */
+
+}
+/* استایل برای لینک فعال */
+.active-nav {
+  color: green;  /* رنگ سبز */
+  text-decoration: underline;  /* خط زیر لینک */
+}
+
+
+.StyledBurger div {
+  width: 2rem;
+  height: 0.25rem;
+  background-color: #333;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  transform-origin: 1px;
+}
+
+.StyledBurger.open div:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.StyledBurger.open div:nth-child(2) {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.StyledBurger.open div:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+/* نمایش منوی همبرگری در موبایل */
+@media (max-width: 768px) {
+  .StyledBurger {
+    display: flex;
+  }
+}
+
+/* منو اصلی */
+ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* برای منو در موبایل */
+@media (max-width: 768px) {
+  ul {
+    flex-direction: column;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 256px; /* مطابق فیگما */
+    padding-top: 96px; /* هم‌تراز کردن با هدر */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 15; /* جلوتر از محتوای اصلی */
+  }
+  ul li {
+    color: #333;
+    text-align: right;
+    padding: 15px 20px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* فاصله بین آیکون و متن */
+    border-bottom: 1px solid #eee; /* خط جداکننده */
+  }
+  .brand{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/img/bgnav.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 96px;
+    width: 256px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 20;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .brand img {
+    content: url('./logo/logo-white.svg'); /* تغییر تصویر در حالت موبایل */
+
+    width: 67px;
+    height: 30px;
+    position: relative;
+    right: 0;
+    margin-left: auto;
+    margin-right: 0;
+    color: white;
+  }
+  .icon {
+    position: fixed; /* موقعیت ثابت */
+    top: 20px; /* فاصله از بالای صفحه */
+    left: 20px; /* فاصله از سمت چپ صفحه */
+    z-index: 1000; /* اولویت بالاتر */
+    flex-direction: row-reverse; /* قرار دادن آیکون‌ها در راستای معکوس (چپ به راست) */
+  }
+
+  .icon img {
+    width: 24px; /* اندازه آیکون‌ها */
+    height: 24px;
+  }
+
+
+  /* نمایش منو هنگام باز بودن */
+  ul.open {
+    transform: translateX(0);
+  }
+
+/* استایل آیکون‌ها */
+ul li svg, ul li img {
+  width: 20px;
+  height: 20px;
+}
+
+/* استایل لینک‌ها */
+a {
+  text-decoration: none;  /* حذف خط زیر لینک‌ها */
+  color: inherit;         /* رنگ پیش‌فرض را از والد بگیرید */
+  transition: color 0.3s; /* انیمیشن تغییر رنگ */
+}
+
+a:hover {
+  color: inherit;  /* حذف تغییر رنگ هاور */
+  text-decoration: none; /* حذف خط زیر در حالت هاور */
+}
+
+}
+
+/* استایل برای لینک‌ها */
+.li {
+  color: #333;
+  text-align: right;
+  padding: 15px;
+}
+
+/* استایل برای ناوبری */
+.nav {
+  width: 100%;
+  height: 55px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  padding: 15px 0;
+}
+
+/* استایل برای منوی دراپ‌داون */
+.custom-dropdown .dropdown-menu {
+  background-color: white;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+  min-width: 150px;
+}
+
+/* آیکون‌ها */
+.d-flex.gap-3 {
+  gap: 15px;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+/* تنظیم موقعیت آیکون‌ها در موبایل */
+@media (max-width: 768px) {
+  .d-flex.gap-3 {
+    gap: 20px; /* فاصله بیشتر برای آیکون‌ها */
+    flex-direction: row-reverse; /* آیکون‌ها را به سمت راست قرار می‌دهد */
+  }
+
+  /* آیکون‌ها */
+  .d-flex img, .d-flex svg {
+    height: 24px;
+    width: 24px;
+  }
+}
+.nav-text{
+ margin-top: 5px ;
+ padding: 5px;
+}
+.nav-items{
+  color: #333 !important;
+  text-decoration: none;
+  border-bottom: none;
+  display: flex;
+  flex-direction: row;  
+  gap: 20px;
+}
+/* اصلاح استایل برای متن وسط در موبایل */
+@media (max-width: 768px) {
+  .nav-text,.nav-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* تراز به سمت چپ */
+    gap: 20px;
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+/* برای منوی دراپ‌داون */
+.custom-dropdown a{
+  color: #333;
+}
+.custom-dropdown .dropdown-menu {
+  
+  background-color: #0D2538;  /* رنگ پس‌زمینه منوی دراپ‌داون */
+  color: #fff;  /* رنگ متن */
+}
+
+.custom-dropdown .dropdown-item {
+  color: #fff;  /* رنگ متن آیتم‌ها */
+}
+
+/* تغییر رنگ هنگام هاور */
+.custom-dropdown .dropdown-item:hover {
+  background-color: #fff;  /* رنگ پس‌زمینه هنگام هاور */
+}
+
+a {
+  text-decoration: none; /* حذف خط زیر لینک‌ها */
+  color: inherit;        /* حذف رنگ پیش‌فرض آبی */
+  transition: color 0.3s; /* انیمیشن تغییر رنگ */
+  padding: 5px;
+ 
+}
+
+a:hover {
+  color: inherit;        /* حذف تغییر رنگ در هاور */
+  text-decoration: none; /* حذف خط زیر در هاور */
+}
+
+/* در صورت لزوم، لینک‌های فعال را با رنگ خاصی تغییر دهید */
+.active-nav {
+  color: green;  /* رنگ سبز برای لینک‌های فعال */
+  text-decoration: underline;  /* خط زیر لینک‌های فعال */
+}
+.nav-link{
+  padding: 5px;
+  padding-top: 0;
+
+
+}
+.nav-link:hover{
+  color: inherit;        /* حذف تغییر رنگ در هاور */
+  text-decoration: none; /* حذف خط زیر در هاور */
+}
