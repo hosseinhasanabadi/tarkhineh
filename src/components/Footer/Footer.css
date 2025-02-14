@@ -1,0 +1,48 @@
+.main-fotter {
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(public/img/footer.jpg);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center; /* مرکز چین افقی */
+    align-items: center; /* مرکز چین عمودی */
+    color: white; /* رنگ متن */
+    text-align: center;
+    
+  }
+  .list-unstyled {
+    color: white;
+  }
+  .list-unstyled a {
+    padding-top: 20px;
+    color: white;
+    text-decoration: none;
+  }
+  .list-unstyled a:hover {
+    color: #ffd700;
+  }
+  .list-unstyled a {
+    display: block;
+    padding-top: 20px;
+    font-size: 14px;
+    color: white;
+    text-align: start;
+    text-decoration: none;
+  }
+  .form .form-control {
+    background-color: rgba(0, 0, 0, 0.5); /* رنگ پس‌زمینه فیلد ورودی */
+    color: white; /* رنگ متن ورودی */
+    border: 1px solid white; /* حاشیه سفید برای ورودی */
+  }
+  
+  .form .form-control::placeholder {
+    color: #fff; /* رنگ placeholder (طلایی) */
+  }
+  
+ 
+  
+  
+  
