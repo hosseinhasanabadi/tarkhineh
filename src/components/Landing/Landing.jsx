@@ -6,7 +6,7 @@ function Landing() {
   return (
     <section className="landing ">
       <div className="container-fluid">
-        <h1 class="landing__title">
+        <h1 className="landing__title">
           <Typewriter
             onInit={(typewriter) => {
               typewriter
@@ -20,7 +20,7 @@ function Landing() {
             }}
           />
         </h1>
-        <BtnGreen btnTitle="سفارش انلاین غذا" btnLink="/"  />
+        <BtnGreen btnTitle="سفارش انلاین غذا" btnLink="/" />
       </div>
     </section>
   );

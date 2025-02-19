@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router";
 import { CiSearch } from "react-icons/ci";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "./NavBar.css";
@@ -8,7 +8,14 @@ import Navbar from "react-bootstrap/Navbar";
 const RightNav = ({ open }) => {
   const [activeItem, setActiveItem] = useState("");
   const handleClick = (item) => setActiveItem(item);
-
+  const [branchName, setBranchName] = useState(""); // وضعیت برای ذخیره اسم شعبه
+  const { BranchName } = useParams();
+  useEffect(() => {
+    // وقتی که پارامتر BranchName تغییر می‌کند، نام شعبه را به وضعیت بروز می‌کنیم
+    if (BranchName) {
+      setBranchName(BranchName);
+    }
+  }, [BranchName]);
   return (
     <>
       <ul className={open ? "open" : ""} dir="rtl">
@@ -26,26 +33,26 @@ const RightNav = ({ open }) => {
           </Link>
 
           <NavDropdown
-            title="شعبه"
+            title={branchName || "شعبه"}
             id="basic-nav-dropdown"
             className="custom-dropdown pt-2"
           >
             <NavDropdown.Item
               as={Link}
-              to="/branch/1"
+              to="/BranchSHo/سعادت اباد"
               onClick={() => handleClick("شعبه ۱")}
             >
-              شعبه ۱
+              سعادت اباد ۱
             </NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/profile">
-              Profile
+            <NavDropdown.Item as={Link} to="/BranchSHo/اکباتان">
+              اکباتان
             </NavDropdown.Item>
             <NavDropdown.Item
               as={Link}
-              to="/branch/2"
-              onClick={() => handleClick("شعبه ۲")}
+              to="BranchSHo/3"
+              onClick={() => handleClick(" ۲جردن")}
             >
-              شعبه ۲
+              جردن
             </NavDropdown.Item>
           </NavDropdown>
 
